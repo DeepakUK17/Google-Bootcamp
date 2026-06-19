@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roast My GitHub V2</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔥 Roast My GitHub</h1>
+        <p>Enter a username and prepare for emotional damage.</p>
+      </header>
+      
+      <main>
+        <div class="controls-box">
+          <div class="search-box">
+            <input type="text" id="username" placeholder="GitHub Username..." autocomplete="off">
+            <button id="roast-btn">Roast Me</button>
+          </div>
+          <div class="spice-selector">
+            <label for="spice-level">Spice Level:</label>
+            <select id="spice-level">
+              <option value="mild">Mild 😌</option>
+              <option value="medium" selected>Medium 🔥</option>
+              <option value="nuclear">Nuclear ☢️</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="loading" class="hidden">
+          <div class="spinner"></div>
+          <p>Analyzing pathetic commits...</p>
+        </div>
+
+        <div id="result-card" class="glass-card hidden">
+          <div class="profile-header">
+            <img id="avatar" src="" alt="Avatar">
+            <div class="profile-info">
+              <h2 id="name">Name</h2>
+              <a id="handle" href="#" target="_blank">@username</a>
+              <div class="account-age" id="account-age">Joined: ...</div>
+            </div>
+            <button id="copy-btn" class="icon-btn" title="Copy Roast">📋 Copy</button>
+          </div>
+          
+          <div class="dashboard-grid">
+            <div class="stats-column">
+              <div class="stat"><span id="repos">0</span> Repos</div>
+              <div class="stat"><span id="stars">0</span> Total Stars</div>
+              <div class="stat"><span id="followers">0</span> Followers</div>
+              <div class="stat"><span id="following">0</span> Following</div>
+            </div>
+            <div class="chart-column">
+              <canvas id="langChart"></canvas>
+            </div>
+          </div>
+
+          <div class="roast-content">
+            <h3>The Verdict:</h3>
+            <p id="roast-text">...</p>
+          </div>
+        </div>
+
+        <div id="error-msg" class="hidden">
+          User not found. Even GitHub doesn't know who that is.
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
